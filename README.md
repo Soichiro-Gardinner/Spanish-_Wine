@@ -1,4 +1,5 @@
 # Wine Acidity Prediction
+
 Business Problem and Stakeholders
 A wine company wants to optimize the acidity levels of their wines. They want to know the acidity level that makes their wines the most enjoyable to their customers. The stakeholders are the company executives who make business decisions based on the wine acidity prediction models.
 
@@ -19,6 +20,11 @@ The pH level of wines shows a moderate correlation with their quality. Lower pH 
 Wines with higher alcohol content generally have better quality ratings.
 Model Performance
 The random forest model with hyperparameters {'max_depth': 15, 'n_estimators': 100} had the best performance, with a test RMSE of 0.239 and test R^2 of 0.463. This model could predict the acidity levels of wines to optimize their taste and quality.
+
+### Why Is it important to predict wine's acidity?
+![alt text](https://user-images.githubusercontent.com/124306090/236453402-43674a52-8de7-4ff7-b376-d57e621f503e.png)
+- **Because:** From the line plot, we can see that there is a moderate negative correlation between acidity and quality ratings. As the acidity level increases, the quality ratings tend to decrease.
+
 
 # Model Recommendations
 The company should aim to produce wines with lower pH levels to improve their quality.
