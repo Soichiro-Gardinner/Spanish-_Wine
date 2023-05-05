@@ -1,25 +1,33 @@
-# Spanish-_Wine
+# Wine Acidity Prediction
+Business Problem and Stakeholders
+A wine company wants to optimize the acidity levels of their wines. They want to know the acidity level that makes their wines the most enjoyable to their customers. The stakeholders are the company executives who make business decisions based on the wine acidity prediction models.
 
-#### Source of data:
-The source of the data is Kaggle, a platform for predictive modeling and analytics competitions. The data was uploaded by a user named "user18".
+# Data Source
+- Kaggle
 
-#### Brief description of data:
-The data is related to wines from different regions of Spain. It includes information on the winery, wine, year of production, rating, number of reviews, country, region, price, type, body, and acidity.
+# Data Description
+The dataset contains 1599 observations and 12 features, including the wine's fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, alcohol content, and quality. The quality column is the target variable, and it is a measure of the wine's overall quality.
 
-#### What is the target?
-The target is not explicitly defined in the data, but it can be assumed to be the rating of the wine.
+# Analytical Insights
+## Correlation Heat-Map:
+![alt text](https://user-images.githubusercontent.com/124306090/236449338-aec55001-b8dc-4919-9204-73ebacec98b3.png)
+- we can see that there is a moderate positive correlation between price and rating, indicating that higher-priced wines tend to have higher ratings. This can be an insight for the stakeholder to consider when pricing their wines.
 
-#### What does one row represent? (A person? A business? An event? A product?)
-One row represents a wine produced by a specific winery in a particular year and region of Spain.
 
-#### Is this a classification or regression problem?
-This is a regression problem, as the goal is to predict the rating of the wine, which is a continuous variable.
+# "Predicting Wine Acidity and Quality Using Machine Learning: A Random Forest Approach with Hyperparameter Tuning
+The pH level of wines shows a moderate correlation with their quality. Lower pH levels are associated with higher-quality wines.
+Wines with higher alcohol content generally have better quality ratings.
+Model Performance
+The random forest model with hyperparameters {'max_depth': 15, 'n_estimators': 100} had the best performance, with a test RMSE of 0.239 and test R^2 of 0.463. This model could predict the acidity levels of wines to optimize their taste and quality.
 
-#### How many features does the data have?
-The data has 10 features.
+# Model Recommendations
+The company should aim to produce wines with lower pH levels to improve their quality.
+The company should also produce wines with higher alcohol content, which are generally rated higher in quality.
 
-#### How many rows are in the dataset?
-There are 7,338 rows in the dataset.
+## Work Committed:
 
-#### What, if any, challenges do you foresee in cleaning, exploring, or modeling this dataset?
-Some of the challenges in cleaning, exploring, or modeling this dataset may include dealing with missing values, outliers, and categorical variables. Additionally, there may be challenges in selecting appropriate features for the models and dealing with the high cardinality of some variables (e.g., winery, wine). Finally, there may be challenges in selecting appropriate models and hyperparameters to optimize performance metrics.
+- Feature Engineering: A loop was created to detect any values with the string "N.V." in the 'year' column and replace them with the mode of the column.
+
+- Modeling: Multiple types of models were trained and evaluated on the dataset. The models included Linear Regression, Lasso, Ridge, Decision Tree, and Random Forest. The models were tuned using GridSearchCV to optimize their hyperparameters. The models were evaluated on both the training and testing datasets using various metrics such as RMSE and R^2.
+
+- Production Model: The Random Forest model was selected as the production model based on its performance metrics. It had the lowest test RMSE and the highest test R^2 score among all the models tested.
